@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 
 export default function Qrcode(){
-    const [name, setname] = useState("hi");
     const router = useRouter()
     const { petname } = router.query
 
@@ -17,7 +16,7 @@ export default function Qrcode(){
 
         
         <div>
-        <Qrcodegen obj={petname} />
+        <Qrcodegen obj={"http://localhost:3000/".concat(petname)} />
         </div>
     )
     }

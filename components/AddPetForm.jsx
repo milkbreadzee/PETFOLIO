@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import React from "react";
 
 import { app, database, db, storage } from "../config/firebase";
 import { collection, addDoc, getDocs,setDoc,doc, getFirestore } from "firebase/firestore";
@@ -11,6 +13,7 @@ import { useAuth } from "../context/AuthContext";
 
 export default function AddPetForm() {
   const [signedInUser, setSignedInUser] = useState();
+  const [open, setOpen] = React.useState(false);
   const initialValues = {
     age: 0,
     name: "",
@@ -117,14 +120,14 @@ export default function AddPetForm() {
 
   return (
     <div className="bg-white flex gap-4 h-screen rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+      <Link href="/dashboard"><button>jghfhg</button></Link>
       {/* <div className="w-36 m-0 p-0">
       {" "}
       <Sidebar />
     </div> */}
       <div className="grid px-20 mt-10 gap-4 gap-y-2 ml-10 text-sm grid-cols-1 lg:grid-cols-3">
         <div className="text-gray-600">
-          <p className="font-medium text-xl">Register New Pets</p>
-          <p>Please fill out all the fields.</p>
+         
         </div>
 
         <div className="lg:col-span-2">
@@ -215,10 +218,12 @@ export default function AddPetForm() {
               <div className="inline-flex items-start">
                 <button
                   onClick={formhandler}
-                  className=" bg-red-600 px-6 py-3 text-white rounded-xl"
+                  className=" bg-green-500 px-6 py-3 text-white rounded-xl mr-2"
                 >
                   Submit
                 </button>
+               
+                  
               </div>
             </div>
           </div>
