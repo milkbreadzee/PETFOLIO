@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { app } from "../config/firebase";
 import { useAuth } from "../context/AuthContext";
+import Dashboard from "../components/dashboard/Dashboard";
 
 
 export default function dashboard() {
@@ -21,7 +22,7 @@ export default function dashboard() {
 
   return (
     <>
-<h1>              {signedInUser?.displayName}
-</h1>    </>
+    <Dashboard />
+   </>
   );
 }

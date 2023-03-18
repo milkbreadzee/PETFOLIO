@@ -1,12 +1,9 @@
-import Petboard from "../components/petboard"
-import PetDetails from "../components/petdetails"
+import Login from "../components/auth/login"
 export default function Home() {
   return (
     <>
      
-    {/* <Petboard /> */}
-
-    <PetDetails />
+    <Login />
     </>
   )
 }

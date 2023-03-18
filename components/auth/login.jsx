@@ -79,26 +79,28 @@ console.log(useAuth)
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
         <div className="relative flex items-end rounded-full px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 bg-gray-50 sm:px-6 lg:px-8">
           <div className="absolute inset-0 rounded-full">
-            <video
+            {/* <video
               className="object-cover w-full h-full"
               src="/vid.mp4"
               autoPlay="true"
-            />
-            {/* <img
+            /> */}
+            <img
               className="object-cover w-full h-full  "
-              src="/login.jpg"
-            ></img> */}
+              src="/vid.gif"
+            ></img>
           </div>
-          <div className="absolute rounded-full align-middle inset-0 bg-gradient-to-t from-black to-transparent"></div>
 
           <div className="relative flex justify-center items-center "></div>
-        </div>
-
+          </div>
+          
         <div className="flex items-center justify-center px-4 py-10  bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24">
           <div className="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
-            <h2 className="text-3xl font-body font-clash-display-600 font- leading-tight text-black sm:text-4xl">
-              WelAAAAcome{" "}
-            </h2>
+          <div className="flex flex-row gap-3 items-center">
+              <img src="/patti.png" className="h-8 w-8"></img>
+              <h2 className="text-3xl font-body font-clash-display-600 font- leading-tight text-black sm:text-4xl">
+                Welcome{" "}
+              </h2>
+            </div>
 
             <form onSubmit={handleLogin} method="POST" className="mt-8">
               <div className="space-y-5">
@@ -120,7 +122,7 @@ console.log(useAuth)
                       value={data.email}
                       required
                       placeholder="Enter email to get started"
-                      className="block w-full py-4 pl-4 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-full bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                      className="block w-full py-4 pl-4 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-yellow-200 rounded-full bg-yellow-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                     />
                   </div>
                 </div>
@@ -149,7 +151,7 @@ console.log(useAuth)
                       }
                       value={data.password}
                       placeholder="Enter your password"
-                      className="block w-full py-4 pl-4 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-full bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                      className="block w-full py-4 pl-4 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-yellow-200 rounded-full bg-yellow-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                     />
                   </div>
                 </div>
@@ -157,8 +159,9 @@ console.log(useAuth)
                 <div>
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 border border-transparent rounded-full bg-gradient-to-r bg-black focus:outline-none hover:opacity-80 focus:opacity-80"
-                  >
+                    className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 border border-transparent rounded-full bg-gradient-to-r bg-[#f4de49] focus:outline-none hover:opacity-80 focus:opacity-80"
+                    >
+                  
                     Log in
                   </button>
                 </div>
@@ -168,11 +171,11 @@ console.log(useAuth)
               <button
                 type="button"
                 onClick={signInWithGoogle}
-                class="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-full hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none"
+                class="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-[#6a601d] transition-all duration-200 bg-white border-2 border-gray-200 rounded-full hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none"
               >
                 <div class="absolute inset-y-0 left-0 p-4">
                   <svg
-                    class="w-6 h-6 text-black"
+                    class="w-6 h-6 text-[#b6ba2c]"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"

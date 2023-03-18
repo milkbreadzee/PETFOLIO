@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
-import Loader from "../components/loader/Loader";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useAuth } from "../context/AuthContext";
