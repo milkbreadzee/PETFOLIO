@@ -31,6 +31,7 @@ export default function Qrcodegen({obj}) {
 		})
 	}
 
+	
 
 
 	useEffect(() => {
