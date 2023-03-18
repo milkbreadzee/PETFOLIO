@@ -21,18 +21,18 @@ export default function Profile() {
           </div>
         </div>
         <div className="mt-16 flex flex-col items-center">
-          <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+          <h4 className="text-xl font-bold text-black">
             Patti
           </h4>
           <p className="text-base font-normal text-gray-600">poli patti</p>
         </div>
-        <div className="mt-6 bg-white p-4 w-full rounded-xl mx-4 flex flex-col mb-3  gap-1 justify-start md:!gap-1">
+        <div className="mt-6 bg-white p-4 w-full rounded-xl mx-4 flex flex-col mb-3 text-black gap-1 justify-start md:!gap-1">
           <p>Breed:</p> <p>Age:</p>
           <p>Medicine:</p>
           <p>Allergy:</p>
         </div>
         <span class="inline-flex items-center m-2 px-6 py-2 bg-red-400 hover:bg-red-300 rounded-full text-sm font-semibold text-white">
-          <img src="/missing.png" className="h-8 w-8"></img>
+          <img src="/walking.png" className="h-8 w-8"></img>
 
           <span class="ml-1">Missing my pet</span>
         </span>

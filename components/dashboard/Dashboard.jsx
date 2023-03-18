@@ -9,6 +9,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app, database, db, storage } from "../../config/firebase";
 import { useState, useEffect } from "react";
 import AddPetForm from "../AddPetForm";
+import Link from "next/link";
 
 
 export default function Dashboard() {
@@ -28,32 +29,23 @@ export default function Dashboard() {
   
 
   return (
-    <div className=" flex bg-yellow-500 min-h-screen flex-col sm:flex-row ">
+    <div className=" flex bg-[#f28824] min-h-screen flex-col sm:flex-row ">
       {open && (<>
                     
         <div className="h-screeen fixed z-50 w-screen flex justify-center bg-[#fffffff4]">
-            
         
           <div className="grid  gap-8 grid-cols-1 h-screen mt-12 bg-slate-50 px-12 py-5 rounded-xl">
-          <div className="backbtn z-50 flex justify-center h-10">
-                    <button
-                                    onClick={() => setOpen(false)}
-                                    className="bg-red-600 px-6 py-3 text-white rounded-xl"
-                                    >
-                                    {" "}
-                                    x{" "}
-                                    </button>
-                                
-                    </div>
+          
             <div className="flex flex-col ">
-            
+   <button  className="bg-red-500 absolute text-white flex justify-center h-12 items-center -mt-12 w-16 rounded-full"  onClick={() => setOpen(false)}>X</button> 
+
               <div className="flex flex-col sm:flex-row items-center">
                       <AddPetForm />
                     
                 <div className="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0">
                     
                 </div>
-              </div>
+              </div> 
 
               <div className="mt-5">
                 <div className="form">
@@ -68,7 +60,7 @@ export default function Dashboard() {
 
       )}
 
-      <div className="flex w-full sm:min-w-96 m-0 p-0" style={{ flex: 0.25 }}>
+      <div className="flex w-full m-4 -mr-9 sm:min-w-96 px-0" style={{ flex: 0.25 }}>
         <Sidebar />
       </div>
 

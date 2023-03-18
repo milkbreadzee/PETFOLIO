@@ -5,14 +5,26 @@ import router, { useRouter } from "next/router";
 import { useAuth } from "../../context/AuthContext";
 import Map from "../map/Mapc";
 import Profile from "./Profile";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { app, database, db, storage } from "../../config/firebase";
+import { useState, useEffect } from "react";
 
 export default function Prodashboard() {
-  const { user, login, loging } = useAuth();
-  console.log(user);
-
+  const [signedInUser, setSignedInUser] = useState();
+  const auth = getAuth(app);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        setSignedInUser(user);
+      } else {
+      }
+    });
+  }, []);
+  
   return (
     <div className=" flex bg-yellow-500 min-h-screen flex-col sm:flex-row ">
-      <div className="flex w-full sm:min-w-96 m-0 p-0" style={{ flex: 0.25 }}>
+       <div className="flex w-full m-4 -mr-9 sm:min-w-96 px-0" style={{ flex: 0.25 }}>
         <Sidebar />
       </div>
 
@@ -26,9 +38,9 @@ export default function Prodashboard() {
           </h1>
           <div className="flex flex-row justify-center gap-5 items-center">
             <h6 className="font-body font-clash-display-600">
-              {user.displayName}
+              {signedInUser?.displayName}
             </h6>
-            <img src={user.photoURL} className="w-8 opacity-90 rounded-full" />{" "}
+            <img src={signedInUser?.photoURL} className="w-8 opacity-90 rounded-full" />{" "}
           </div>
         </div>
 
