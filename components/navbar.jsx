@@ -1,9 +1,15 @@
+
 export default function Navbar(){
     return(
     <>
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 pt-5">
   <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a className="btn btn-ghost normal-case text-3xl font-mono">SAFE PAW</a>
+  </div>
+  <div className="menuitems flex flex-row gap-10 px-5 text-xl font-mono">
+    <a className="btn btn-ghost normal-case text-xl">HOME</a>
+    <a className="btn btn-ghost normal-case text-xl">ABOUT</a>
+    <a className="btn btn-ghost normal-case text-xl">GET QR</a>
   </div>
   <div className="flex-none gap-2">
     <div className="form-control">
@@ -19,7 +25,7 @@ export default function Navbar(){
         <li>
           <a className="justify-between">
             Profile
-            <span className="badge">New</span>
+            {/* <span className="badge">New</span> */}
           </a>
         </li>
         <li><a>Settings</a></li>

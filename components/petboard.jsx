@@ -5,7 +5,11 @@ export default function Petboard(){
     return(
         <>
         <Navbar />
-        <div className="cards flex flex-row px-5 py-3 gap-4 justify-between">
+        <div className="cards grid grid-cols-4 pr-0 pl-10 py-20 gap-y-10 gap-x-4justify-between overflow-auto">
+        <PetCard />
+        <PetCard />
+        <PetCard />
+        <PetCard />
         <PetCard />
         <PetCard />
         <PetCard />
@@ -13,9 +17,10 @@ export default function Petboard(){
         </div>
         
         <div className="addpet fixed bottom-0 right-20 w-10 p-5">
-        <button className="btn"><AiOutlinePlus /></button>
+        <button className="btn "><AiOutlinePlus /></button>
         </div>
 
+       
        
         
         
