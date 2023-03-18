@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { collection,  addDoc, getDocs,getFirestore, getDoc, doc } from "firebase/firestore";
 import { app, database } from "../config/firebase";
 import { useEffect,useState } from "react";
-
+import DisplayPetCard from "../components/DisplayPetCard";
 
 
 export default function PetProfile() {
@@ -58,7 +58,8 @@ const fetchPost = async () => {
 if(status){
   return (
     <div>
-      <h1>{PetProfile}</h1>
+      {/* <h1>{PetProfile}</h1> */}
+        <DisplayPetCard pet={status} />
         {/* <h1>{docid}</h1> */}
     </div>
   );
