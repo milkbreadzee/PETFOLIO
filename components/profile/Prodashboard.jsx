@@ -8,8 +8,12 @@ import Profile from "./Profile";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app, database, db, storage } from "../../config/firebase";
 import { useState, useEffect } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+
 
 export default function Prodashboard() {
+  const [pets, setPets] = useState([]);
+  const temp = [];
   const [signedInUser, setSignedInUser] = useState();
   const auth = getAuth(app);
   useEffect(() => {
@@ -21,10 +25,41 @@ export default function Prodashboard() {
       }
     });
   }, []);
-  
+
+  // console.log(signedInUser, "hello")
+
+
+
+  const fetchPost = async () => {
+    const q = query(collection(database, "pets"), where("owner_name", "==", signedInUser?.displayName));
+    // console.log("koi")
+
+    const querySnapshot = await getDocs(q);
+    // console.log(querySnapshot)
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      // console.log(doc.id, " => ", doc.data());
+      temp.push(doc.data());
+      setPets(temp);
+    });
+  }
+
+
+  useEffect(() => {
+
+    if (signedInUser){
+      // console.log("hello")
+    fetchPost();
+    }
+  }, [signedInUser]);
+
+
+
+// console.log(pets)
+  if (pets) {
   return (
     <div className=" flex bg-[#6D9886] min-h-screen flex-col sm:flex-row ">
-       <div className="flex w-full m-4 -mr-9 sm:min-w-96 px-0" style={{ flex: 0.25 }}>
+      <div className="flex w-full m-4 -mr-9 sm:min-w-96 px-0" style={{ flex: 0.25 }}>
         <Sidebar />
       </div>
 
@@ -49,9 +84,12 @@ export default function Prodashboard() {
             className="grid relative h-full grid-cols-3 px-2 gap-5  rounded-xl "
             style={{ flex: 3 }}
           >
-            <Profile />
-            <Profile />
-            <Profile />
+            <Profile  obj={pets[1]}/>
+            
+
+
+
+
             {/* <video
               className="object-cover w-full h-full opacity-0 rounded-xl"
               src=""
@@ -69,4 +107,5 @@ export default function Prodashboard() {
       </div>
     </div>
   );
+}
 }
