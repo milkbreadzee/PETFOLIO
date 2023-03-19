@@ -4,7 +4,7 @@ import Navbar from "../navbar_j/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import router, { useRouter } from "next/router";
 import { useAuth } from "../../context/AuthContext";
-import Map from "../map/Mapc";
+import Map from "../map/mapc";
 import Profile from "./Profile";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app, database, db, storage } from "../../config/firebase";
@@ -97,13 +97,7 @@ console.log(pets)
               src=""
               autoPlay="true"
             /> */}
-            <div className="absolute rounded-2xl align-middle inset-0">
-              <div className="flex px-6 justify-start gap-2 flex-col items-left mt-5 mb-2 py-4">
-                {/* <p className="text-3xl font-body font-clash-display-600 ">
-                  Hi {user.displayName}
-                </p> */}
-              </div>
-            </div>
+          
           </div>
         </div>
       </div>
