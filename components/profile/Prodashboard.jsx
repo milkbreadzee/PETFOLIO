@@ -84,8 +84,9 @@ export default function Prodashboard() {
             className="grid relative h-full grid-cols-3 px-2 gap-5  rounded-xl "
             style={{ flex: 3 }}
           >
-            <Profile  obj={pets[1]}/>
-            
+                        
+            {pets.map((obj) => (<Profile obj={obj} />))}
+            {/* {pets.map((obj) => (<h1>{obj.name}</h1> ))} */}
 
 
 

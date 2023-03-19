@@ -49,7 +49,7 @@ export default function Qrcodegen({obj}) {
 				onChange={e => setUrl(e.target.value)} />
 			<button onClick={GenerateQRCode}>Generate</button> */}
 			{qr && <>
-				<img src={qr} className="h-1/3  aspect-square" />
+				<img src={qr} className="h-full  aspect-square" />
 				{/* <a href={qr} download="qrcode.png">Download</a> */}
 			</>}
 		</div>

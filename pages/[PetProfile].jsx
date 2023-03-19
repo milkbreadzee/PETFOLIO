@@ -64,11 +64,11 @@ if(status){
     </div>
   );
 }
-else{
-    return (
-        <div>
-          <h1>404</h1>
-        </div>
-      );
-}
+// else{
+//     return (
+//         <div>
+//           <h1>404</h1>
+//         </div>
+//       );
+// }
 }
