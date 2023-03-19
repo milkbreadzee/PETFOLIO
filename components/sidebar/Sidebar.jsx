@@ -17,7 +17,7 @@ export default function Sidebaruser() {
 
 
   return (
-    <div className="flex flex-col rounded-l-[40px] rounded-r-[10px] pr-9 items-center px-5 gap-10 justify-items-stretch  w-full min-h-10 sm:h-full overflow-hidden text-gray-800  bg-[#9ED5C5] p-0  ">
+    <div className="flex flex-col rounded-l-[40px] rounded-r-[10px] pr-9 items-center px-5 gap-10 justify-items-stretch  w-full min-h-10 sm:h-full overflow-hidden text-gray-800  bg-[#7dc8b3] p-0  ">
       <div className=" hidden sm:flex flex-col py-0 items-center w-full mt-24 gap-8 m-0 transition-all transform duration-500">
         <Link
           className=" flex items-center w-full h-16 justify-center -mt-2 mb-6 m-0 p-0 rounded-full  text-wehite-600 bg-white-100 hover:text-gray-300 "
