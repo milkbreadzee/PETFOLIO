@@ -65,7 +65,7 @@ if(status){
       </Head>
       <div className="absolute inset-0 bg-gray-900/20"></div>
       <div className="relative max-w-md px-4 mx-auto rounded-md  sm:px-0">
-        <div className="overflow-hidden bg-white rounded-md shadow-md">
+        <div className="overflow-hidden bg-white rounded-2xl shadow-md">
           <div className="px-0 py-0 mt-0 sm:px-0 sm:py-0">
             <div className="text-center">
               <div className="relative flex h-32 w-full justify-center rounded-xl bg-cover">
@@ -84,7 +84,7 @@ if(status){
             </div>
 
             <div className="flex p-6 gap-2 m-8 rounded-lg flex-col items-center justify-center">
-              <h2 className="text-2xl sm:text-3xl tracking-wide	 font-body text-gray-900">
+              <h2 className="text-2xl sm:text-3xl tracking-wide	 font-display text-gray-900">
                 {status.name}
               </h2>
               <div className="flex p-6 gap-2 mt-5 w-full rounded-lg border flex-col items-left justify-start">
