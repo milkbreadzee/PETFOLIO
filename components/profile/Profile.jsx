@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Qrcodegen from "../QRcode";
+import { getDatabase, ref, child, push, update } from "firebase/database";
+import { getAuth } from "firebase/auth";
+import { doc, updateDoc } from "firebase/firestore";
+import { database } from "../../config/firebase";
+import Link from "next/link";
+
 
 
 
 
 
 export default function Profile({ obj }) {
+
+  const washingtonRef = doc(database, "pets", obj.name);
+  const updatenote = () => {
+    console.log("hi")
+    updateDoc(washingtonRef, {
+      missing_status: true,});}
+ 
+  // function update_status(){
+    
+  //   const ref = firebase.database().ref(`path/to/objects/${obj.id}`);
+  //   ref.update({ missing_status: "True" });
+  
+  // }
   return (
     <div className="flex flex-col justify-center items-center  ">
       <div className="relative flex flex-col items-center rounded-[20px] bg-slate-100 w-[400px] mx-auto p-4  bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:!shadow-none">
@@ -31,6 +50,7 @@ export default function Profile({ obj }) {
             {" "}
             {obj?.breed || "Breed"}
           </p>
+          
         </div>
         <div className="mt-6 bg-white p-4 w-full rounded-xl mx-4 flex flex-col mb-3 text-black gap-1 justify-start md:!gap-1">
           {/* <p>Breed:</p> <p>Age:</p>
@@ -140,11 +160,21 @@ export default function Profile({ obj }) {
 
           </div>
         </div>
+        <div className="flex flex-row items-center">
+        <button onClick={updatenote}>
         <span class="inline-flex items-center m-2 px-6 py-2 bg-red-400 hover:bg-red-300 rounded-full text-sm font-semibold text-white">
           <img src="/walking.png" className="h-8 w-8"></img>
 
           <span class="ml-1">Missing my pet</span>
         </span>
+        </button>
+        <Link href={"http://localhost:3000/qr/".concat(obj.name)}>
+        <button class="inline-flex items-center m-2 px-6 py-2 bg-white border-2 border-red-400 hover:bg-red-300 hover:text-white rounded-full text-sm font-semibold text-red-400">Show QR</button>
+        </Link>
+        
+        </div>
+        
+
       </div>
     </div>
   );
