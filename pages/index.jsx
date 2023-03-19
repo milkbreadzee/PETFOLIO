@@ -19,13 +19,13 @@ const index = () => {
       const { user, logout } = useAuth();
   if (user) {
     
-        router.push("/dashboard")
+      return(
+        <h1>hello:2</h1>
+      )
     
   }
   else {
-     return(
-        <h1>hihi</h1>
-     )
+    router.push("/dashboard")
   }
  
    
