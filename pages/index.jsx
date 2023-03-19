@@ -9,9 +9,9 @@ import { useRouter } from "next/router";
 
 
 
-const Login = dynamic(() => import("../components/auth/Login"), {
-  ssr: false,   
-});
+// const Login = dynamic(() => import("../components/auth/Login"), {
+//   ssr: false,   
+// });
 
 
 const index = () => {
@@ -23,7 +23,9 @@ const index = () => {
     
   }
   else {
-     return <Login />;
+     return(
+        <h1>hihi</h1>
+     )
   }
  
    
