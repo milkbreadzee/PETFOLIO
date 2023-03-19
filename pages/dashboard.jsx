@@ -6,9 +6,9 @@ import { useAuth } from "../context/AuthContext";
 import Dashboard from "../components/dashboard/Dashboard";
 
 
-export default function dashboard() {
+export default function Dashboard1() {
 
- const [signedInUser, setSignedInUser] = useState();
+ const [signedInUser, setSignedInUser] = useState("");
   const auth = getAuth(app);
   onAuthStateChanged(auth, (user) => {
     if (user) {
