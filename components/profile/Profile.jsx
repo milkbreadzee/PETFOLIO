@@ -100,13 +100,13 @@ export default function Profile({ obj }) {
                     <div className="flex  px-3  items-stretch h-full w-full ">
                       <div className="flex gap-1 justify-center items-center">
                         <h2 className="font-sans  text-slate-800  font-semibold text-xs tracking-wide  pb-1 ">
-                          {obj.location?.latitude || "Latitude"}
+                          {obj.location_last?.latitude || "Latitude"}
                         </h2>
                         <h2 className="font-sans  text-slate-800  font-semibold text-xs tracking-wide  pb-1 ">
                           ,
                         </h2>
                         <h2 className="font-sans  text-slate-800  font-semibold text-xs tracking-wide  pb-1 ">
-                          {obj.location?.longitude || "Latitude"}
+                          {obj.location_last?.longitude || "Latitude"}
                         </h2>
                       </div>
 
