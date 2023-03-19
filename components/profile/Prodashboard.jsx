@@ -96,13 +96,7 @@ export default function Prodashboard() {
               src=""
               autoPlay="true"
             /> */}
-            <div className="absolute rounded-2xl align-middle inset-0">
-              <div className="flex px-6 justify-start gap-2 flex-col items-left mt-5 mb-2 py-4">
-                {/* <p className="text-3xl font-body font-clash-display-600 ">
-                  Hi {user.displayName}
-                </p> */}
-              </div>
-            </div>
+          
           </div>
         </div>
       </div>
