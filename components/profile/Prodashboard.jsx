@@ -23,7 +23,7 @@ export default function Prodashboard() {
   }, []);
   
   return (
-    <div className=" flex bg-yellow-500 min-h-screen flex-col sm:flex-row ">
+    <div className=" flex bg-[#6D9886] min-h-screen flex-col sm:flex-row ">
        <div className="flex w-full m-4 -mr-9 sm:min-w-96 px-0" style={{ flex: 0.25 }}>
         <Sidebar />
       </div>

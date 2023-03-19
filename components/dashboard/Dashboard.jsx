@@ -29,7 +29,7 @@ export default function Dashboard() {
   
 
   return (
-    <div className=" flex bg-[#f28824] min-h-screen flex-col sm:flex-row ">
+    <div className=" flex bg-[#6D9886] min-h-screen flex-col sm:flex-row ">
       {open && (<>
                     
         <div className="h-screeen fixed z-50 w-screen flex justify-center bg-[#fffffff4]">
