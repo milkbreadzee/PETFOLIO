@@ -1,5 +1,6 @@
 export default function DisplayPetCard({ pet }) {
-    console.log(pet)
+    console.log(pet.missing_status)
+    
 
 
 
@@ -17,6 +18,7 @@ export default function DisplayPetCard({ pet }) {
                 <h1 className="text-2xl">Age: {pet.age}</h1>
                 <h1 className="text-2xl">Medications: {pet.medications}</h1>
                 <h1 className="text-2xl">Allergy: {pet.allergy}</h1>
+                {/* <h1 className="text-2xl">{pet.missing_status?heelo:hi}</h1> */}
                 </div>
  
         </div>
