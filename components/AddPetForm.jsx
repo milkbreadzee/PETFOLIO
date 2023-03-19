@@ -124,12 +124,12 @@ export default function AddPetForm() {
   };
 
   return (
-    <div className="bg-white flex gap-4 h-screen rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+    <div className="bg-white  flex gap-4 h-screen rounded shadow-lg p-4 px-4 md:p-8 mb-6">
       {/* <div className="w-36 m-0 p-0">
       {" "}
       <Sidebar />
     </div> */}
-      <div className="grid px-20 mt-10 gap-4 gap-y-2 ml-10 text-sm grid-cols-1 lg:grid-cols-3">
+      <div className="grid px-20  gap-3 gap-y-2 ml-10 text-sm grid-cols-1 lg:grid-cols-3">
         <div className="text-gray-600"></div>
 
         <div className="lg:col-span-2">
