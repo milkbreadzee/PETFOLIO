@@ -97,7 +97,7 @@ function Map() {
   // } else {
   //   console.log("Geolocation is not supported by this browser.");
   // }
-  // console.log(latitude,longitude)
+  console.log(latitude,longitude)
 
   function saveLocationData() {}
 

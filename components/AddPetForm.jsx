@@ -125,7 +125,7 @@ export default function AddPetForm() {
 
   return (
     <div className="bg-white flex gap-4 h-screen rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-      <Link href="/dashboard"><button>jghfhg</button></Link>
+  
       {/* <div className="w-36 m-0 p-0">
       {" "}
       <Sidebar />
@@ -224,14 +224,21 @@ export default function AddPetForm() {
               </div>
             </div>
             <div className="md:col-span-5 text-left mt-2">
-              <div className="inline-flex items-start">
+              <div className="inline-flex items-start gap-4">
                 <button
                   onClick={formhandler}
                   className=" bg-green-500 px-6 py-3 text-white rounded-xl mr-2"
                 >
                   Submit
                 </button>
-               
+                <Link href="/dashboard">
+                <button
+                 
+                  className=" bg-red-500 px-6 py-3 text-white rounded-xl mr-2"
+                >
+                  Cancel
+                </button>
+                </Link>
                   
               </div>
             </div>

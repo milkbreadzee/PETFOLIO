@@ -23,11 +23,10 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className=" flex bg-black min-h-screen flex-col sm:flex-row ">
-      <div className="flex w-full sm:w-96 m-0 p-0" style={{ flex: 0.25 }}>
+    <div className=" flex bg-[#6D9886] min-h-screen flex-col sm:flex-row ">
+       <div className="flex w-full m-4 -mr-9 sm:min-w-96 px-0" style={{ flex: 0.25 }}>
         <Sidebar />
       </div>
-
       <div
         className="flex relative flex-col  bg-white m-4 px-5 rounded-[40px]"
         style={{ flex: 3 }}
