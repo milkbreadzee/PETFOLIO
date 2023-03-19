@@ -9,18 +9,21 @@ import { useRouter } from "next/router";
 
 
 
-// const Login = dynamic(() => import("../components/auth/Login"), {
-//   ssr: false,   
-// });
+const Login = dynamic(() => import("../components/auth/Login"), {
+  ssr: false,   
+});
 
 
 const login = () => {
     const router = useRouter();
       const { user, logout } = useAuth();
   if (user) {
+    
+        router.push("/dashboard")
+    
   }
   else {
-    router.push("/dashboard")
+     return <Login />;
   }
  
    
