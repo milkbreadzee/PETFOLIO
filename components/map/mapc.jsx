@@ -83,21 +83,21 @@ function Map() {
   // console.log(corods)
 
   let longitude, latitude;
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        (latitude = position.coords.latitude),
-          (longitude = position.coords.longitude);
-        // console.log(latitude,longitude)
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  } else {
-    console.log("Geolocation is not supported by this browser.");
-  }
-  console.log(latitude,longitude)
+  // if (navigator.geolocation) {
+  //   navigator.geolocation.getCurrentPosition(
+  //     (position) => {
+  //       (latitude = position.coords.latitude),
+  //         (longitude = position.coords.longitude);
+  //       // console.log(latitude,longitude)
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
+  // } else {
+  //   console.log("Geolocation is not supported by this browser.");
+  // }
+  // console.log(latitude,longitude)
 
   function saveLocationData() {}
 

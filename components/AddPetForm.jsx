@@ -100,7 +100,7 @@ export default function AddPetForm() {
     setFormValues({ ...formValues, owner_name: signedInUser?.displayName , owner_gmail: signedInUser?.email });
     console.log(formValues);
 
-    const dbInstance = collection(database, "pets");
+    // const dbInstance = collection(database, "pets");
 
     console.log(formValues);
     setDoc(doc(database, "pets",formValues.name) ,{
@@ -111,10 +111,15 @@ export default function AddPetForm() {
       medications: formValues.medications,
       owner_gmail: signedInUser?.email || "hello",
       owner_name: signedInUser?.displayName || "hello",
-        owner_phone: formValues.owner_phone,
         image: formValues.imageurl,
-      location: currentLocation,
+      location_last: currentLocation,
+      location_history: [currentLocation],
+      missing_status: formValues.missing_status,
+    datetime: getCurrentDate(),
     });
+
+
+  
     router.push("/qr/".concat(formValues.name));
   };
 
@@ -162,7 +167,7 @@ export default function AddPetForm() {
 
               <label for="text">Age</label>
               <input
-                type="int"
+                type="number"
                 name="age"
                 placeholder="age"
                 value={formValues.age}
@@ -171,19 +176,7 @@ export default function AddPetForm() {
               />
             </div>
 
-            <div className="md:col-span-5">
-              {/* <p>{formErrors.username}</p> */}
-
-              <label for="text">Medications</label>
-              <input
-                type="text"
-                name="medication"
-                placeholder="medications"
-                value={formValues.medications}
-                onChange={handleChange}
-                className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-              />
-            </div>
+         
 
             <div className="md:col-span-5">
               {/* <p>{formErrors.username}</p> */}
@@ -198,6 +191,22 @@ export default function AddPetForm() {
                 className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
               />
             </div>
+
+            <div className="md:col-span-5">
+              {/* <p>{formErrors.username}</p> */}
+
+              <label for="text">Medications</label>
+              <input
+                type="text"
+                name="medications"
+                placeholder="medications"
+                value={formValues.medications}
+                onChange={handleChange}
+                className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+              />
+            </div>
+
+
 
             <div className="md:col-span-2 mt-4 bg-slate-200 px-5 py-5 rounded-xl">
               <div>
