@@ -91,17 +91,17 @@ export default function Buydash() {
           >
             <Card
               title="PET QR Chain - Quick and Easy Pet Identification Tag"
-              img="https://media.qrtiger.com/blog/2021/04/2_65_30.jpg"
+              img="/p1.jpg"
               price="399"
             />
             <Card
               title="PET QR Chain - Quick and Easy Pet Identification Tag"
-              img="https://cdn.accentuate.io/80574808150/1632425969406/QLO.SocialShareImage.QRDogIDTag.jpg?v=0"
+              img="/p2.jpg"
               price="465"
             />
             <Card
               title="PET QR Chain - Quick and Easy Pet Identification Tag"
-              img="https://sc01.alicdn.com/kf/HTB1pzDKKFXXXXbvXVXXq6xXFXXX2/222473320/HTB1pzDKKFXXXXbvXVXXq6xXFXXX2.jpg_.webp"
+              img="/p3.jpg"
               price="250"
             />
 
