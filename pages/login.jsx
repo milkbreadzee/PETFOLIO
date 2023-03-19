@@ -14,7 +14,7 @@ const Login = dynamic(() => import("../components/auth/Login"), {
 });
 
 
-const index = () => {
+const login = () => {
     const router = useRouter();
       const { user, logout } = useAuth();
   if (user) {
@@ -29,4 +29,4 @@ const index = () => {
    
   
 }
-export default index;
+export default login;

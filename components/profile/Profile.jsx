@@ -18,7 +18,10 @@ export default function Profile({ obj }) {
   const updatenote = () => {
     console.log("hi")
     updateDoc(washingtonRef, {
-      missing_status: true,});}
+      missing_status: true,});
+      
+    }
+
  
   // function update_status(){
     

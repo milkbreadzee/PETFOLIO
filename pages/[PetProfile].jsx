@@ -6,12 +6,35 @@ import {
   getFirestore,
   getDoc,
   doc,
+  updateDoc,
 } from "firebase/firestore";
 import { app, database } from "../config/firebase";
 import { useEffect, useState } from "react";
 import DisplayPetCard from "../components/DisplayPetCard";
 import Head from "next/head";
 import Link from "next/link";
+
+
+
+
+
+
+const geoLocation = () => {
+  if (!navigator.geolocation){
+      setStatusq('Geolocation is not supported by your browser');
+  }else{
+      setStatusq('Locating...');
+      navigator.geolocation.getCurrentPosition((position) => {
+          setLat(position.coords.latitude);
+          setLng(position.coords.longitude);
+          setCurrLoc({lat, lng});
+      }, () => {
+          setStatusq('Unable to retrieve your location');
+      })
+  }
+}
+
+// geoLocation();
 
 function Missingtrue() {
   console.log("truello");
@@ -57,7 +80,18 @@ function Missingfalse() {
   );
 }
 export default function PetProfile() {
+
+  
+
+  const [lat, setLat] = useState(" ")
+const [lng, setLng] = useState(" ")
+const[currLoc, setCurrLoc] =useState(null)
+const [statusq, setStatusq] = useState(" ")
   const router = useRouter();
+
+
+ 
+
   const { PetProfile } = router.query;
   // console.log(PetProfile)
   const names = [];
@@ -74,24 +108,36 @@ export default function PetProfile() {
     if (docSnap.exists()) {
       console.log("Document data:", docSnap.data());
       setStatus(docSnap.data());
+      console.log(status?.name)
+
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
     }
   };
 
+  function updatestatsbtn() {
+    geoLocation();
+    const washingtonRef = doc(database, "pets", status.name);
+    const updatenote = () => {
+      updateDoc(washingtonRef, {
+        location_last:currLoc,
+
+        });
+  }
+  }
+
+
   useEffect(() => {
     if (PetProfile) {
       fetchPost();
+      console.log(status,"ji")
     }
-
-    //   console.log(docid)
-
-    // console.log(corods)
-    // console.log(markerData)
   }, [PetProfile]);
 
   if (status) {
+   
+   
     return (
       <section className="relative bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-slate-500 to-gray-600 min-h-screen py-7 bg-gray-900 sm:py-10 lg:py-20">
         <Head>
@@ -124,6 +170,7 @@ export default function PetProfile() {
                 <h2 className="tracking-wide lowercase font-sans text-lg text-gray-600 mt-0 pt-0">
                   {status.breed}
                 </h2>
+                <button onClick={updatestatsbtn}>hi</button>
                 <div className="flex p-6 gap-2 mt-5 w-full rounded-lg border flex-col items-left justify-start">
                   <h2 className="text-lg">Breed: {status.breed}</h2>
                   <h2 className="text-lg">Age: {status.age}</h2>

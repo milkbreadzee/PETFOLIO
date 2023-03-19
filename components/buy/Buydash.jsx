@@ -3,7 +3,6 @@ import Navbar from "../navbar_j/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import router, { useRouter } from "next/router";
 import { useAuth } from "../../context/AuthContext";
-import Map from "../map/Mapc";
 import Addpop from "../profile/Addpop";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app, database, db, storage } from "../../config/firebase";
