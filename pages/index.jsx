@@ -5,10 +5,9 @@ import dynamic from "next/dynamic";
 import { useAuth } from "../context/AuthContext";
 // import Dashboard from "./dashboard";
 
-import Login from "../components/auth/Login"
 
 
-const Login1 = dynamic(() => import("../components/auth/Login"), {
+const Login = dynamic(() => import("../components/auth/Login"), {
   ssr: false,   
 });
 
