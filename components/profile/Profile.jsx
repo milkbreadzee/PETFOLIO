@@ -5,7 +5,7 @@ import { getDatabase, ref, child, push, update } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { doc, updateDoc } from "firebase/firestore";
 import { database } from "../../config/firebase";
-
+import Link from "next/link";
 
 
 
@@ -160,7 +160,7 @@ export default function Profile({ obj }) {
 
           </div>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row items-center">
         <button onClick={updatenote}>
         <span class="inline-flex items-center m-2 px-6 py-2 bg-red-400 hover:bg-red-300 rounded-full text-sm font-semibold text-white">
           <img src="/walking.png" className="h-8 w-8"></img>
@@ -168,7 +168,10 @@ export default function Profile({ obj }) {
           <span class="ml-1">Missing my pet</span>
         </span>
         </button>
+        <Link href={"http://localhost:3000/qr/".concat(obj.name)}>
         <button class="inline-flex items-center m-2 px-6 py-2 bg-white border-2 border-red-400 hover:bg-red-300 hover:text-white rounded-full text-sm font-semibold text-red-400">Show QR</button>
+        </Link>
+        
         </div>
         
 
