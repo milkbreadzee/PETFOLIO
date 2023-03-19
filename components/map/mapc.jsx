@@ -36,39 +36,39 @@ function Map() {
   //         })
   //     }
 
-  const [markerData, setmarkerData] = useState([{}]);
-  const [Location, setLocation] = useState([]);
-  const [corods, setcorods] = useState([]);
+  // const [markerData, setmarkerData] = useState([{}]);
+  // const [Location, setLocation] = useState([]);
+  // const [corods, setcorods] = useState([]);
 
-  const fetchPost = async () => {
-    const db = getFirestore();
-    await getDocs(collection(db, "accidents")).then((querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setmarkerData(newData);
-      setLocation(
-        newData
-          .filter((person) => person.location !== "")
-          .map((person) => person.location)
-      );
-    });
-  };
+  // const fetchPost = async () => {
+  //   const db = getFirestore();
+  //   await getDocs(collection(db, "accidents")).then((querySnapshot) => {
+  //     const newData = querySnapshot.docs.map((doc) => ({
+  //       ...doc.data(),
+  //       id: doc.id,
+  //     }));
+  //     setmarkerData(newData);
+  //     setLocation(
+  //       newData
+  //         .filter((person) => person.location !== "")
+  //         .map((person) => person.location)
+  //     );
+  //   });
+  // };
 
-  useEffect(() => {
-    fetchPost();
-    // console.log(markerData)
+  // useEffect(() => {
+  //   fetchPost();
+  //   // console.log(markerData)
 
-    // console.log(corods)
-    // console.log(markerData)
-  }, []);
+  //   // console.log(corods)
+  //   // console.log(markerData)
+  // }, []);
 
-  useEffect(() => {
-    setcorods(Location.map((item) => [item?.longitude, item?.latitude]));
-  }, [Location]);
+  // useEffect(() => {
+  //   setcorods(Location.map((item) => [item?.longitude, item?.latitude]));
+  // }, [Location]);
 
-  // let cordinaates =[[76.3289828 , 10.0298734],[76.3570,10.1004],[76.3125,10.0261]]
+  let cordinaates =[[76.3289828 , 10.0298734],[76.3109,10.0284],[76.3419,10.0159],[76.3,10.0431]]
   // console.log( Location.map((item) => [item.longitude, item.latitude]));
 
   // console.log(corods)
@@ -97,9 +97,9 @@ function Map() {
   // } else {
   //   console.log("Geolocation is not supported by this browser.");
   // }
-  console.log(latitude,longitude)
+  // console.log(latitude,longitude)
 
-  function saveLocationData() {}
+  // function saveLocationData() {}
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -131,21 +131,15 @@ function Map() {
       );
 
       let el = document.createElement("div");
-      const markers = markerData.map((obj) => {
+      const markers = cordinaates.map((obj) => {
+        console.log(obj)
         el = document.createElement("div");
         el.className = "marker";
-        if (obj.location?.latitude) {
           return new mapboxgl.Marker(el)
-            .setLngLat([obj.location.longitude, obj.location.latitude])
-            .setPopup(
-              new mapboxgl.Popup({ closeOnClick: false }).setHTML(
-                ReactDOMServer.renderToString(
-                  <PopupComponent data={obj} key={obj.id} />
-                )
-              )
-            )
+            .setLngLat(obj)
+
             .addTo(map);
-        }
+        
       });
 
       // const markers = markerData?.map((obj) => {
@@ -184,7 +178,7 @@ function Map() {
 
       // });
     });
-  }, [corods]);
+  }, []);
 
   return (
     <>
