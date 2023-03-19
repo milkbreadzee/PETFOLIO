@@ -15,13 +15,11 @@ import { useRouter } from "next/router";
 
 
 const index = () => {
-     const router = useRouter();
-      const { user, logout } = useAuth();
-  if (user) {
+     
     
         router.push("/dashboard")
     
-  }
+  
  
    
   
