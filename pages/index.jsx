@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 // import Dashboard from "./dashboard";
 
 
-const Login1 = dynamic(() => import("../components/auth/Login"), {
+const Login = dynamic(() => import("../components/auth/Login"), {
   ssr: false,
 });
 
@@ -19,7 +19,7 @@ const index = () => {
     )
   }
   else {
-     return <Login1 />;
+     return <Login />;
   }
  
    
