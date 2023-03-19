@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from "react";
 import Navbar from "../navbar_j/Navbar";
 import Sidebar from "../sidebar/Sidebar";
@@ -55,7 +56,7 @@ export default function Prodashboard() {
 
 
 
-// console.log(pets)
+console.log(pets)
   if (pets) {
   return (
     <div className=" flex bg-[#6D9886] min-h-screen flex-col sm:flex-row ">

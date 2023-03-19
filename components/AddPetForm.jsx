@@ -120,25 +120,22 @@ export default function AddPetForm() {
 
 
   
-    router.push("/qr/".concat(formValues.name));
+    router.push("/profile");
   };
 
   return (
     <div className="bg-white flex gap-4 h-screen rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-  
       {/* <div className="w-36 m-0 p-0">
       {" "}
       <Sidebar />
     </div> */}
       <div className="grid px-20 mt-10 gap-4 gap-y-2 ml-10 text-sm grid-cols-1 lg:grid-cols-3">
-        <div className="text-gray-600">
-         
-        </div>
+        <div className="text-gray-600"></div>
 
         <div className="lg:col-span-2">
           <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
             <div className="md:col-span-5">
-              <label for="full_name">Pet's name</label>
+              <label for="full_name">Pet&apos;s name</label>
               <input
                 type="text"
                 name="name"
@@ -176,8 +173,6 @@ export default function AddPetForm() {
               />
             </div>
 
-         
-
             <div className="md:col-span-5">
               {/* <p>{formErrors.username}</p> */}
 
@@ -206,8 +201,6 @@ export default function AddPetForm() {
               />
             </div>
 
-
-
             <div className="md:col-span-2 mt-4 bg-slate-200 px-5 py-5 rounded-xl">
               <div>
                 <input
@@ -232,14 +225,10 @@ export default function AddPetForm() {
                   Submit
                 </button>
                 <Link href="/dashboard">
-                <button
-                 
-                  className=" bg-red-500 px-6 py-3 text-white rounded-xl mr-2"
-                >
-                  Cancel
-                </button>
+                  <button className=" bg-red-500 px-6 py-3 text-white rounded-xl mr-2">
+                    Cancel
+                  </button>
                 </Link>
-                  
               </div>
             </div>
           </div>
